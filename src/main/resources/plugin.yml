@@ -1,0 +1,23 @@
+name: LSysTree
+version: '${project.version}'
+main: org.fishydarwin.lsystree.LSysTree
+api-version: 1.20
+load: STARTUP
+authors: [fishydarwin]
+description: Provides tools for generating Lindenmayer System fractal trees
+permissions:
+  lsystree.command.*:
+    description: All commands.
+    default: op
+    children:
+    - lsystree.command.lsysload
+  lsystree.command.lsysload:
+    description: Allows use of /lsysload
+    default: op
+commands:
+  lsysload:
+    description: Loads an L-system tree from memory.
+    usage: /lsysload (file)
+    permission: lsystree.command.lsysload
+    aliases:
+    - lsload
